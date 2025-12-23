@@ -12,3 +12,5 @@ vim.opt.expandtab = true
 vim.opt.confirm = true
 vim.opt.autowrite = true
 vim.opt.hidden = true
+
+vim.opt.clipboard = "unnamedplus"
