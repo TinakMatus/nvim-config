@@ -14,3 +14,6 @@ vim.opt.autowrite = true
 vim.opt.hidden = true
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
