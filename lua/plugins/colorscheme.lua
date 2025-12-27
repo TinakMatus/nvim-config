@@ -1,18 +1,21 @@
 return {
   {
-    "sainnhe/everforest",
-    lazy = false,
+    "AlphaTechnolog/pywal.nvim",
+    name = "pywal",
     priority = 1000,
     config = function()
-      -- Choice of 'soft', 'medium', or 'hard'
-      vim.g.everforest_background = "soft" 
-      -- Better contrast for Treesitter
-      vim.g.everforest_better_performance = 1
+      local pywal = require("pywal")
+      pywal.setup({
+        -- This ensures Neovim NEVER paints a background color
+        transparent_background = true, 
+      })
+      vim.cmd.colorscheme "pywal"
       
-      -- Tell Neovim we want the light version
-      vim.opt.background = "dark"
-      
-      vim.cmd([[colorscheme everforest]])
+      -- FORCE transparency for everything (borders, floats, etc.)
+      local groups = { "Normal", "NormalFloat", "FloatBorder", "TelescopeNormal", "TelescopeBorder", "NvimTreeNormal" }
+      for _, group in ipairs(groups) do
+        vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+      end
     end,
-  },
+  }
 }

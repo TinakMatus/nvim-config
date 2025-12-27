@@ -3,11 +3,13 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "folke/lazydev.nvim" },
     config = function()
-
-      vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { fg = "#FF0000", bold = true })
-      vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { fg = "#FFA500" })
-      vim.api.nvim_set_hl(0, "DiagnosticError", { fg = "#FF0000" })
-
+      vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { ctermfg = 9, bold = true, bg = "none" })
+      vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { ctermfg = 11, bg = "none" })
+      vim.api.nvim_set_hl(0, "DiagnosticError", { ctermfg = 9, bg = "none" })
+      
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none", ctermbg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", ctermbg = "none" })
+      vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", ctermbg = "none" })
 
       require("lazydev").setup()
 
@@ -17,7 +19,7 @@ return {
         },
         signs = true,
         underline = true,
-        update_in_insert = true,
+        update_in_insert = true, 
       })
 
       vim.api.nvim_create_autocmd("LspAttach", {
@@ -32,5 +34,3 @@ return {
     end,
   }
 }
-
-
