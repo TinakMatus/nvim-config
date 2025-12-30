@@ -12,15 +12,15 @@ return {
       vim.cmd.colorscheme "pywal"
 
       local groups = {
-        "Normal",
-        "NormalFloat",
-        "FloatBorder",
-        "TelescopeNormal",
-        "TelescopeBorder",
-        "NvimTreeNormal",
-        "LineNr",
-        "CursorLineNr",
-        "SignColumn"
+  "Normal", "NormalFloat", "FloatBorder",
+  "TelescopeNormal", "TelescopeBorder",
+  "LineNr", "CursorLineNr", "SignColumn",
+  "StatusLine",
+  "StatusLineNC",
+  "MiniStatuslineModeNormal",
+  "MiniStatuslineModeInsert",
+  "MiniStatuslineModeVisual",
+  "MsgArea",
       }
 
       for _, group in ipairs(groups) do
