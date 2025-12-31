@@ -21,3 +21,6 @@ vim.opt.termguicolors = true
 vim.opt.history = 100
 
 vim.opt.showmode = false
+
+vim.opt.undofile = true
+
