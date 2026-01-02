@@ -24,3 +24,5 @@ vim.opt.showmode = false
 
 vim.opt.undofile = true
 
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
